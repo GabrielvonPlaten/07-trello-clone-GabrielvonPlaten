@@ -1,0 +1,42 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.__column {
+    background-color: bisque;
+    padding: 0 5px;
+    color: black;
+    border-right: 1px solid gray;
+}
+
+.__column h1 {
+    text-align: center;
+    border-bottom: gray solid 1px;
+}
+
+.card {
+    background-color: rgb(255, 213, 162);
+    border: gray solid 1px;
+    padding-left: 8px;
+}
