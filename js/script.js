@@ -25,4 +25,6 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent().remove();
     });
+
+    
 });
