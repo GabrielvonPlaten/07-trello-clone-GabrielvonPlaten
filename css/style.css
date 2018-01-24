@@ -18,8 +18,7 @@ header {
 }
 
 header button {
-    margin: 7px;
-
+    margin: 15px;
 }
 
 .container {
@@ -46,6 +45,16 @@ header button {
     padding-left: 8px;
 }
 
+button.delete-card {
+    
+}
+
 .card:hover {
     cursor: pointer;
+}
+
+
+div.dialog {
+    border-radius: 10px;
+    background-color: gray;
 }

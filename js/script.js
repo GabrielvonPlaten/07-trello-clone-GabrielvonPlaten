@@ -13,4 +13,16 @@ $(document).ready(function () {
             $(this).append(movedItem);
         }
     });
+
+    //Click Cards
+    $(".card").click(function (e) { 
+        e.preventDefault();
+        
+    });
+
+    /* Delete cards */
+    $(".delete-card").click(function (e) { 
+        e.preventDefault();
+        $(this).parent().remove();
+    });
 });
