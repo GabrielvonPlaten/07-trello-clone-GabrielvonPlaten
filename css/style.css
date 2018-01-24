@@ -3,7 +3,6 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
-    color: white;
 }
 
 h3 {
@@ -14,17 +13,23 @@ p {
     font-size: 1.1em;
 }
 
+header {
+    background-color: gray;
+}
+
+header button {
+    margin: 7px;
+
+}
+
 .container {
     height: 100%;
     width: 100%;
-    margin: 0 auto;
-    background-color: black;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
 .__column {
-    background-color: bisque;
     padding: 0 5px;
     color: black;
     border-right: 1px solid gray;
@@ -36,7 +41,11 @@ p {
 }
 
 .card {
-    background-color: rgb(255, 213, 162);
+    background-color: rgb(179, 179, 179);
     border: gray solid 1px;
     padding-left: 8px;
+}
+
+.card:hover {
+    cursor: pointer;
 }
