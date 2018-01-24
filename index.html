@@ -8,25 +8,31 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <title>jQuery UI Widget</title>
+  <title>Trello Clone</title>
 </head>
 
 <body>
+
   <header>
     <button id="add-card">Add Card</button>
   </header>
 
+  <!-- Create Card Dialog -->
   <div class="add-card-dialog" title="Add new card?">
     <button id="yes">Yes</button>
-    <input id="card-title-form" placeholder="Card Title"></input>
+    <form>
+      <input id="card-title-form" placeholder="Card Title"></input>
+      <textarea id="card-description" placeholder="Card description goes here..."></textarea>
+    </form>
   </div>
 
+  <!-- Columns and cards -->
   <div class="container">
-
     <div class="__column todo">
       <h1>Todo</h1>
       <div class="card">
           <h3 class="card__title">Card Title 1</h3>
+          <p>Nostrud minim mollit consequat est voluptate tempor occaecat amet ullamco sint fugiat.</p>
           <button class="delete-card">Delete</button>
       </div>
     </div>

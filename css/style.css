@@ -62,3 +62,12 @@ header button {
     padding: 10px 10px;
     margin: 0 25px;
 }
+
+.add-card-dialog input {
+    margin: 10px 0;
+}
+
+textarea#card-description {
+    height: 50px;
+    resize: none;
+}
