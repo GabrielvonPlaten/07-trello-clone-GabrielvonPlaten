@@ -42,7 +42,10 @@ header button {
 .card {
     background-color: rgb(179, 179, 179);
     border: gray solid 1px;
+    border-radius: 7px;
     padding-left: 8px;
+    width: 315px;
+    margin: 5px 0;
 }
 
 
