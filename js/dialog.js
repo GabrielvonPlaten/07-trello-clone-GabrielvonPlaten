@@ -11,7 +11,8 @@ $(document).ready(function () {
     let deleteButton = '<button class="delete-card">Delete</button>';
 
     //Create new card
-    $("#yes").on("click", function (e) {
+    $("#confirm-yes").on("click", function (e) {
+        //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
             
         $("<div/>", {
@@ -19,7 +20,7 @@ $(document).ready(function () {
             html: '<h3 class="card__title">' + $('#card-title-form').val() + '</h3>' + '<p>' + $('#card-description').val() + '</p>' + deleteButton
          }).appendTo(".todo");
         } else {
-            alert('You must fill the forms.');
+            alert('You must fill out the forms.');
         }
         e.preventDefault();
     });
