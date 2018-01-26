@@ -29,6 +29,7 @@ $(document).ready(function () {
         } 
     });
 
+    //Dialog datepicker
     $('#datetime').datepicker({dateFormat: 'dd-mm-yy'});
 
     //Create new card
@@ -66,6 +67,7 @@ $(document).ready(function () {
                     $(this).append(movedItem);
                 }
             });
+
             /* Delete cards */
             $('.card').on('click', '.delete-card', function () {
                 $(this).parent().slideUp(200);
