@@ -1,3 +1,5 @@
+@import 'datepicker.css';
+
 html, body {
     padding: 0;
     margin: 0;
@@ -42,19 +44,36 @@ header button {
 .card {
     background-color: rgb(179, 179, 179);
     border: gray solid 1px;
+    border-radius: 7px;
     padding-left: 8px;
+    width: 315px;
 }
 
-button.delete-card {
-    
-}
 
 .card:hover {
     cursor: pointer;
 }
 
 
-div.dialog {
+#add-card-dialog {
     border-radius: 10px;
     background-color: gray;
+    text-align: center;
+    padding-top: 40px;
 }
+
+#add-card-dialog button {
+    padding: 10px 10px;
+    margin: 0 25px;
+}
+
+#add-card-dialog input {
+    margin: 10px 0;
+}
+
+textarea#card-description {
+    height: 50px;
+    resize: none;
+}
+
+
