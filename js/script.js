@@ -20,6 +20,7 @@ $(document).ready(function () {
             '<h3 class="card__title">' + cardTitle + '</h3>' + 
             '<p class="card__description" title="Card Description">' + cardDescription + '</p>' + 
             deleteCard +
+            'Deadline: ' +
             datePicker;
 
         $('<div/>', {
