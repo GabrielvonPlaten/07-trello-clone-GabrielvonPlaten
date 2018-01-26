@@ -77,3 +77,6 @@ textarea#card-description {
 }
 
 
+.card button {
+    margin-right: 12px;
+}
