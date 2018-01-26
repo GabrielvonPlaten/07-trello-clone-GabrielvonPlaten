@@ -6,21 +6,21 @@ $(document).ready(function () {
 
     //Create new card
     $('#add-card-dialog').on('click', '#add-new-card', function () {
+
+        let cardTitle = $('#card-title-form').val();
+        let cardDescription = $('#card-description').val();
+        let deleteCard = '<button class="delete-card">Delete</button>';
+        let datePicker = '<input class="date-picker">';
+
         //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
-
+        
         /* Card propeties */
-        let deleteButton = 
-        '<button class="delete-card">Delete</button>';
-        let readMoreButton = 
-        '<button class="readmore">Read More</button>';
-
         let cardPropeties = 
-            '<h3 class="card__title">' + 
-            $('#card-title-form').val() + '</h3>' + 
-            '<p class="card-description" title="Card Description">' + 
-            $('#card-description').val() + '</p>'
-            + deleteButton + readMoreButton
+            '<h3 class="card__title">' + cardTitle + '</h3>' + 
+            '<p class="card__description" title="Card Description">' + cardDescription + '</p>' + 
+            deleteCard +
+            datePicker;
 
         $('<div/>', {
             class: 'card',
@@ -37,15 +37,11 @@ $(document).ready(function () {
                     $(this).append(movedItem);
                 }
             });
-            //Card dialog
-            $('.card-description').dialog({ autoOpen: false });
-            $('.card').on('click', '.readmore', function () {
-                $(this).find('.card-description').dialog('open');
-            });
+            $('.date-picker').datepicker({});
 
             /* Delete cards */
             $('.card').on('click', '.delete-card', function () {
-                $(this).parent().toggle('explode');
+                $(this).parent().slideUp(200);
             });
         } else {
             alert('You must fill out the forms.');
