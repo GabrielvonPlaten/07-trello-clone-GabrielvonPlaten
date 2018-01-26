@@ -13,35 +13,44 @@
 
 <body>
 
-  <header>
+  <header id="page-header">
     <button id="add-card">Add Card</button>
   </header>
 
   <!-- Create Card Dialog -->
   <div id="add-card-dialog" title="Add new card?">
-    <button id="add-new-card">Yes</button>
     <form>
       <input id="card-title-form" placeholder="Card Title"></input>
       <textarea id="card-description" placeholder="Card description goes here..."></textarea>
     </form>
+    <button id="add-new-card">Yes</button>
   </div>
+
 
   <!-- Columns and cards -->
   <div class="container">
     <div class="__column todo">
-      <h1>Todo</h1>
+      <header>
+        <h1>Todo</h1>
+      </header>
     </div>
 
     <div class="__column doing">
-      <h1>Doing</h1>
+      <header>
+        <h1>Doing</h1>
+      </header>
     </div>
 
     <div class="__column review">
-      <h1>Review</h1>
+      <header>
+        <h1>Review</h1>
+      </header>
     </div>
 
     <div class="__column done">
-      <h1>Done</h1>
+      <header>
+        <h1>Done</h1>
+      </header>
     </div>
 
   </div>

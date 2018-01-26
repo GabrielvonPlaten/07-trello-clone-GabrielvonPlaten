@@ -15,7 +15,7 @@ p {
     font-size: 1.1em;
 }
 
-header {
+header#page-header {
     background-color: gray;
 }
 
@@ -47,6 +47,7 @@ header button {
     border-radius: 7px;
     padding-left: 8px;
     width: 315px;
+    margin: 0 auto;
 }
 
 
@@ -57,22 +58,24 @@ header button {
 
 #add-card-dialog {
     border-radius: 10px;
-    background-color: gray;
+    background-color: rgb(41, 41, 41);
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 #add-card-dialog button {
-    padding: 10px 10px;
+    padding: 6px 6px;
     margin: 0 25px;
 }
 
 #add-card-dialog input {
-    margin: 10px 0;
+    margin: 2px 0;
+    width: 90%;
 }
 
 textarea#card-description {
-    height: 50px;
+    height: 100px;
+    width: 90%;
     resize: none;
 }
 
