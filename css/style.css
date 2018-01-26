@@ -54,19 +54,19 @@ header button {
 }
 
 
-.add-card-dialog {
+#add-card-dialog {
     border-radius: 10px;
     background-color: gray;
     text-align: center;
     padding-top: 40px;
 }
 
-.add-card-dialog button {
+#add-card-dialog button {
     padding: 10px 10px;
     margin: 0 25px;
 }
 
-.add-card-dialog input {
+#add-card-dialog input {
     margin: 10px 0;
 }
 

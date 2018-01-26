@@ -1,28 +1,33 @@
 $(document).ready(function () {
     $('#add-card-dialog').dialog({ autoOpen: false });
     $('header').on('click', '#add-card', function () { 
-        $('.add-card-dialog').dialog('open');
+        $('#add-card-dialog').dialog('open');
     });
 
-
-    /* Card propeties */
-    let cardTitle = $('#card-title-form').val();
-    let cardDescription = $('#card-description').val();
-    let deleteButton = '<button class="delete-card">Delete</button>';
-
     //Create new card
-    $('.add-card-dialog').on('click', '#add-new-card', function () {
+    $('#add-card-dialog').on('click', '#add-new-card', function () {
         //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
 
+        /* Card propeties */
+        let deleteButton = 
+        '<button class="delete-card">Delete</button>';
+        let readMoreButton = 
+        '<button class="readmore">Read More</button>';
+
+        let cardPropeties = 
+            '<h3 class="card__title">' + 
+            $('#card-title-form').val() + '</h3>' + 
+            '<p class="card-description" title="Card Description">' + 
+            $('#card-description').val() + '</p>'
+            + deleteButton + readMoreButton
+
         $('<div/>', {
             class: 'card',
-            html: '<h3 class="card__title">' + $('#card-title-form').val()
-            + '</h3>' + '<p class="card-description">' + 
-            $('#card-description').val() + '</p>' + deleteButton
+            html: cardPropeties
             }).fadeIn(200).appendTo('.todo')
-            $('.card').draggable({helper: 'clone'});
 
+            $('.card').draggable({helper: 'clone'});
 
             $('.__column').droppable({
                 accept: '.card',
@@ -31,6 +36,11 @@ $(document).ready(function () {
                     let movedItem = $(ui.draggable).draggable();
                     $(this).append(movedItem);
                 }
+            });
+            //Card dialog
+            $('.card-description').dialog({ autoOpen: false });
+            $('.card').on('click', '.readmore', function () {
+                $(this).find('.card-description').dialog('open');
             });
 
             /* Delete cards */
@@ -41,5 +51,4 @@ $(document).ready(function () {
             alert('You must fill out the forms.');
         }
     });
-
 });
