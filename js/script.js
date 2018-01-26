@@ -1,8 +1,22 @@
 $(document).ready(function () {
     //Create card dialog
-    $('#add-card-dialog').dialog({ autoOpen: false });
-    $('header').on('click', '#add-card', function () { 
+     $('header').on('click', '#add-card', function () {
         $('#add-card-dialog').dialog('open');
+    });
+
+    $('#add-card-dialog').dialog({
+        autoOpen: false,
+        modal: true,
+        height: 300,
+        width: 300,
+        show: {
+            effect: "fadeIn",
+            duration: 300
+        },
+        hide: {
+            effect: "fadeOut",
+            duration: 300
+        }   
     });
 
     //Create new card
@@ -42,12 +56,13 @@ $(document).ready(function () {
                 }
             });
 
-            $('.date-picker').datepicker({});
+            $('.date-picker').datepicker({dateFormat: 'dd-mm-yy'});
 
             /* Delete cards */
             $('.card').on('click', '.delete-card', function () {
                 $(this).parent().slideUp(200);
             });
+
         } else {
             alert('You must fill out the forms.');
         }
