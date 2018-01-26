@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 
   <title>Trello Clone</title>
@@ -18,12 +20,18 @@
   </header>
 
   <!-- Create Card Dialog -->
-  <div id="add-card-dialog" title="Add new card?">
+  <div id="add-card-dialog">
+    <h3>Add New Card?</h3>
     <form>
+      <h4>Title</h4>
       <input id="card-title-form" placeholder="Card Title"></input>
+      <h4>Deadline.</h4>
+      <input type="datetime" id="datetime">
+      <h4>Description</h4>
       <textarea id="card-description" placeholder="Card description goes here..."></textarea>
     </form>
     <button id="add-new-card">Yes</button>
+    <button id="closeBtn">No</button>
   </div>
 
 

@@ -5,6 +5,7 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 h3 {
@@ -21,6 +22,37 @@ header#page-header {
 
 header button {
     margin: 15px;
+}
+
+#add-card-dialog {
+    border-radius: 10px;
+    background-color: rgb(41, 41, 41);
+    text-align: center;
+    padding-top: 20px;
+}
+
+#add-card-dialog h3, h4 {
+    color: white;
+}
+
+#add-card-dialog button {
+    padding: 6px 6px;
+    margin: 0 25px;
+}
+
+#add-card-dialog input {
+    margin: 2px 0;
+    width: 90%;
+}
+
+textarea#card-description {
+    height: 100px;
+    width: 90%;
+    resize: none;
+}
+
+.card button {
+    margin-right: 12px;
 }
 
 .container {
@@ -53,33 +85,4 @@ header button {
 
 .card:hover {
     cursor: pointer;
-}
-
-
-#add-card-dialog {
-    border-radius: 10px;
-    background-color: rgb(41, 41, 41);
-    text-align: center;
-    padding-top: 20px;
-}
-
-#add-card-dialog button {
-    padding: 6px 6px;
-    margin: 0 25px;
-}
-
-#add-card-dialog input {
-    margin: 2px 0;
-    width: 90%;
-}
-
-textarea#card-description {
-    height: 100px;
-    width: 90%;
-    resize: none;
-}
-
-
-.card button {
-    margin-right: 12px;
 }
