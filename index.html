@@ -18,7 +18,7 @@
   </header>
 
   <!-- Create Card Dialog -->
-  <div class="add-card-dialog" title="Add new card?">
+  <div id="add-card-dialog" title="Add new card?">
     <button id="add-new-card">Yes</button>
     <form>
       <input id="card-title-form" placeholder="Card Title"></input>
@@ -30,30 +30,10 @@
   <div class="container">
     <div class="__column todo">
       <h1>Todo</h1>
-      <div class="card">
-          <h3 class="card__title">Card Title 1</h3>
-          <p class="card-description">Nostrud minim mollit consequat est voluptate tempor occaecat amet ullamco sint fugiat.</p>
-          <button class="delete-card">Delete</button>
-      </div>
-      <div class="card">
-        <h3 class="card__title">Card Title 2</h3>
-        <p class="card-description">Nostrud minim mollit consequat est voluptate tempor occaecat amet ullamco sint fugiat.</p>
-        <button class="delete-card">Delete</button>
-      </div>
     </div>
 
     <div class="__column doing">
       <h1>Doing</h1>
-      <div class="card">
-        <h3 class="card__title">Card Title 3</h3>
-        <p class="card-description">Nostrud minim mollit consequat est voluptate tempor occaecat amet ullamco sint fugiat.</p>
-        <button class="delete-card">Delete</button>
-      </div>
-      <div class="card">
-        <h3 class="card__title">Card Title 4</h3>
-        <p class="card-description">Nostrud minim mollit consequat est voluptate tempor occaecat amet ullamco sint fugiat.</p>
-        <button class="delete-card">Delete</button>
-      </div>
     </div>
 
     <div class="__column review">
@@ -72,5 +52,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/dialog.js"></script>
 </body>
 </html>

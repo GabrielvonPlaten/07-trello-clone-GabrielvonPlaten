@@ -1,21 +1,9 @@
 $(document).ready(function () {
-    $('.add-card-dialog').dialog({ autoOpen: false });
+    $('#add-card-dialog').dialog({ autoOpen: false });
     $('header').on('click', '#add-card', function () { 
         $('.add-card-dialog').dialog('open');
     });
 
-    //Makes the cards draggable
-    //I still am not sure why I need 'clone' <-- ask Axel
-    $('.card').draggable({helper: 'clone'});
-
-    $('.__column').droppable({
-        accept: '.card',
-        drop: function(event, ui) {
-
-            let movedItem = $(ui.draggable).draggable();
-            $(this).append(movedItem);
-        }
-    });
 
     /* Card propeties */
     let cardTitle = $('#card-title-form').val();
@@ -32,22 +20,26 @@ $(document).ready(function () {
             html: '<h3 class="card__title">' + $('#card-title-form').val()
             + '</h3>' + '<p class="card-description">' + 
             $('#card-description').val() + '</p>' + deleteButton
-            }).fadeIn(200).appendTo('.todo');
+            }).fadeIn(200).appendTo('.todo')
+            $('.card').draggable({helper: 'clone'});
+
+
+            $('.__column').droppable({
+                accept: '.card',
+                drop: function(event, ui) {
+        
+                    let movedItem = $(ui.draggable).draggable();
+                    $(this).append(movedItem);
+                }
+            });
+
+            /* Delete cards */
+            $('.card').on('click', '.delete-card', function () {
+                $(this).parent().toggle('explode');
+            });
         } else {
             alert('You must fill out the forms.');
         }
-    });
-
-    //Click on card for description
-    //Bugged
-    $('.card-description').dialog({ autoOpen: false });
-    $('.body').on('click', '.card', function () { 
-        $('.card-description', this).dialog('open');
-    });
-
-    /* Delete cards */
-    $('.card').on('click', '.delete-card', function () {
-        $(this).parent().toggle('explode');
     });
 
 });
