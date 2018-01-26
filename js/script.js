@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //Create card dialog
     $('#add-card-dialog').dialog({ autoOpen: false });
     $('header').on('click', '#add-card', function () { 
         $('#add-card-dialog').dialog('open');
@@ -7,15 +8,12 @@ $(document).ready(function () {
     //Create new card
     $('#add-card-dialog').on('click', '#add-new-card', function () {
 
+        //Card propeties
         let cardTitle = $('#card-title-form').val();
         let cardDescription = $('#card-description').val();
         let deleteCard = '<button class="delete-card">Delete</button>';
         let datePicker = '<input class="date-picker">';
 
-        //If the forms are filled, then execute
-        if($('#card-title-form').val() && $('#card-description').val()) {
-        
-        /* Card propeties */
         let cardPropeties = 
             '<h3 class="card__title">' + cardTitle + '</h3>' + 
             '<p class="card__description" title="Card Description">' + cardDescription + '</p>' + 
@@ -23,13 +21,18 @@ $(document).ready(function () {
             'Deadline: ' +
             datePicker;
 
+        //If the forms are filled, then execute
+        if($('#card-title-form').val() && $('#card-description').val()) {
+
         $('<div/>', {
             class: 'card',
             html: cardPropeties
             }).fadeIn(200).appendTo('.todo')
 
+            //Makes the card draggable
             $('.card').draggable({helper: 'clone'});
 
+            //Makes the columns droppable
             $('.__column').droppable({
                 accept: '.card',
                 drop: function(event, ui) {
@@ -38,6 +41,7 @@ $(document).ready(function () {
                     $(this).append(movedItem);
                 }
             });
+
             $('.date-picker').datepicker({});
 
             /* Delete cards */
