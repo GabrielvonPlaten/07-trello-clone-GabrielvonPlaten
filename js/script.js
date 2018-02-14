@@ -4,6 +4,7 @@ $(document).ready(function () {
         $('#add-card-dialog').dialog('open');
     });
 
+
     $('#add-card-dialog').dialog({
         autoOpen: false,
         draggable: false,
@@ -29,6 +30,7 @@ $(document).ready(function () {
         } 
     });
 
+
     //Dialog datepicker
     $('#datetime').datepicker({dateFormat: 'dd-mm-yy'});
 
@@ -42,21 +44,22 @@ $(document).ready(function () {
         let datetime = $('#datetime').val();
 
         let cardPropeties = 
-            '<h3 class="card__title">' + cardTitle + '</h3>' + 
-            '<p class="card__description" title="Card Description">' + cardDescription + '</p>' + 
-            deleteCard +
-            '<b>Deadline</b>: ' + datetime;
+            `<h3 class="card__title"> ${cardTitle} </h3>
+            <p class="card__description" title="Card Description"> ${cardDescription}</p> 
+            ${deleteCard}
+            <b>Deadline</b>: ${datetime}`;
 
         //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
 
-        $('<div/>', {
+        $('<li/>', {
             class: 'card',
             html: cardPropeties
             }).fadeIn(200).appendTo('.todo')
 
             //Makes the card draggable
             $('.card').draggable({helper: 'clone'});
+
 
             //Makes the columns droppable
             $('.__column').droppable({

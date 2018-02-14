@@ -62,10 +62,15 @@ textarea#card-description {
     grid-template-columns: repeat(4, 1fr);
 }
 
+li {
+    list-style: none;
+}
+
 .__column {
     padding: 0 5px;
     color: black;
     border-right: 1px solid gray;
+    min-height: 100%;
 }
 
 .__column h1 {
@@ -79,7 +84,7 @@ textarea#card-description {
     border-radius: 7px;
     padding-left: 8px;
     width: 315px;
-    margin: 0 auto;
+    margin: 2px auto;
 }
 
 
