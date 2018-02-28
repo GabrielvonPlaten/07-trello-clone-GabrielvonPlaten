@@ -62,6 +62,11 @@ textarea#card-description {
     grid-template-columns: repeat(4, 1fr);
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 li {
     list-style: none;
 }
@@ -90,4 +95,8 @@ li {
 
 .card:hover {
     cursor: pointer;
+}
+
+span.deadline {
+    padding: 1em;
 }

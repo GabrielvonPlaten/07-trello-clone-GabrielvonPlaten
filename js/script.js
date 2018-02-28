@@ -60,7 +60,7 @@ $(document).ready(function () {
                 <p class="card__description" title="Card Description"> ${cardDescription}</p>
             </div>
             <div id="tabs-${tabIdIncrementTwo}">
-                </b>Deadline: ${datetime}
+                <p class="deadline"><b>Deadline:</b> ${datetime}</p>
             </div>
         </div> 
         ${deleteCard}`
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 $(this).parent().slideUp(200);
             });
 
-            //Increment the number
+            //Increment the id number of the tabs
             tabIdIncrement++;
             tabIdIncrementTwo++;
         } else {
