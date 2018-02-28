@@ -30,7 +30,7 @@ $(document).ready(function () {
         } 
     });
 
-
+    $( "#tabs" ).tabs();
     //Dialog datepicker
     $('#datetime').datepicker({dateFormat: 'dd-mm-yy'});
 
@@ -43,11 +43,27 @@ $(document).ready(function () {
         let deleteCard = '<button class="delete-card">Delete</button>';
         let datetime = $('#datetime').val();
 
-        let cardPropeties = 
-            `<h3 class="card__title"> ${cardTitle} </h3>
-            <p class="card__description" title="Card Description"> ${cardDescription}</p> 
-            ${deleteCard}
-            <b>Deadline</b>: ${datetime}`;
+        //Jquery Tabs Ids increment
+        //I'm sure there's a better way of handling this.
+        //jQuery UI Tabs uses ids to be able to create the tabs
+        let tabIdIncrement = 1;
+        let tabIdIncrementTwo = 2;
+
+        let cardPropeties = `
+        <h3 class="card__title">${cardTitle}</h3>
+            <div class="tabs">
+                <ul>
+                    <li><a href="#tabs-${tabIdIncrement}">Card Description</a></li>
+                    <li><a href="#tabs-${tabIdIncrementTwo}">Deadline</a></li>
+                </ul>
+            <div id="tabs-${tabIdIncrement}">
+                <p class="card__description" title="Card Description"> ${cardDescription}</p>
+            </div>
+            <div id="tabs-${tabIdIncrementTwo}">
+                </b>Deadline: ${datetime}
+            </div>
+        </div> 
+        ${deleteCard}`
 
         //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
@@ -71,11 +87,15 @@ $(document).ready(function () {
                 }
             });
 
+            $( ".tabs" ).tabs();
             /* Delete cards */
             $('.card').on('click', '.delete-card', function () {
                 $(this).parent().slideUp(200);
             });
 
+            //Increment the number
+            tabIdIncrement++;
+            tabIdIncrementTwo++;
         } else {
             alert('You must fill out the forms.');
         }
