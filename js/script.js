@@ -4,6 +4,7 @@ $(document).ready(function () {
         $('#add-card-dialog').dialog('open');
     });
 
+
     $('#add-card-dialog').dialog({
         autoOpen: false,
         draggable: false,
@@ -29,6 +30,7 @@ $(document).ready(function () {
         } 
     });
 
+    $( "#tabs" ).tabs();
     //Dialog datepicker
     $('#datetime').datepicker({dateFormat: 'dd-mm-yy'});
 
@@ -41,22 +43,41 @@ $(document).ready(function () {
         let deleteCard = '<button class="delete-card">Delete</button>';
         let datetime = $('#datetime').val();
 
-        let cardPropeties = 
-            '<h3 class="card__title">' + cardTitle + '</h3>' + 
-            '<p class="card__description" title="Card Description">' + cardDescription + '</p>' + 
-            deleteCard +
-            '<b>Deadline</b>: ' + datetime;
+        //Jquery Tabs Ids increment
+        //I'm sure there's a better way of handling this.
+        //jQuery UI Tabs uses ids for each individual tab
+        //Since it is an id, I needed a way to increment it every time
+        //the user creates a new card.
+        let tabIdIncrement = 1;
+        let tabIdIncrementTwo = 2;
+
+        let cardPropeties = `
+        <h3 class="card__title">${cardTitle}</h3>
+            <div class="tabs">
+                <ul>
+                    <li><a href="#tabs-${tabIdIncrement}">Card Description</a></li>
+                    <li><a href="#tabs-${tabIdIncrementTwo}">Deadline</a></li>
+                </ul>
+            <div id="tabs-${tabIdIncrement}">
+                <p class="card__description" title="Card Description"> ${cardDescription}</p>
+            </div>
+            <div id="tabs-${tabIdIncrementTwo}">
+                <p class="deadline"><b>Deadline:</b> ${datetime}</p>
+            </div>
+        </div> 
+        ${deleteCard}`
 
         //If the forms are filled, then execute
         if($('#card-title-form').val() && $('#card-description').val()) {
 
-        $('<div/>', {
+        $('<li/>', {
             class: 'card',
             html: cardPropeties
             }).fadeIn(200).appendTo('.todo')
 
             //Makes the card draggable
             $('.card').draggable({helper: 'clone'});
+
 
             //Makes the columns droppable
             $('.__column').droppable({
@@ -68,11 +89,15 @@ $(document).ready(function () {
                 }
             });
 
+            $( ".tabs" ).tabs();
             /* Delete cards */
             $('.card').on('click', '.delete-card', function () {
                 $(this).parent().slideUp(200);
             });
 
+            //Increment the id number of the tabs
+            tabIdIncrement++;
+            tabIdIncrementTwo++;
         } else {
             alert('You must fill out the forms.');
         }
