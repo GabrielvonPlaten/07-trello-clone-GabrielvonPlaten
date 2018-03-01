@@ -45,7 +45,9 @@ $(document).ready(function () {
 
         //Jquery Tabs Ids increment
         //I'm sure there's a better way of handling this.
-        //jQuery UI Tabs uses ids to be able to create the tabs
+        //jQuery UI Tabs uses ids for each individual tab
+        //Since it is an id, I needed a way to increment it every time
+        //the user creates a new card.
         let tabIdIncrement = 1;
         let tabIdIncrementTwo = 2;
 
