@@ -1,9 +1,8 @@
 $(document).ready(function () {
     //Create card dialog
-     $('header').on('click', '#add-card', function () {
+     $('#page-header').on('click', '#add-card', function () {
         $('#add-card-dialog').dialog('open');
     });
-
 
     $('#add-card-dialog').dialog({
         autoOpen: false,
